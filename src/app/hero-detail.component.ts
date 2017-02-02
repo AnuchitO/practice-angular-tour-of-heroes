@@ -16,6 +16,7 @@ import { Hero } from './hero';
         <label>name: </label>
         <input [(ngModel)]="hero.name"  placeholder="name"/>
       </div>
+      <button (click)="goBack()">Back</button>
     </div>
   `
 })
@@ -36,6 +37,10 @@ export class HeroDetailComponent implements OnInit {
     .switchMap((params: Params) => this.heroService.getHero(+params['id']))
     .subscribe(hero => this.hero = hero);
 
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
 
