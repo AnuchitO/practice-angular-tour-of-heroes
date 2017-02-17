@@ -29,3 +29,9 @@ Run `ng github-pages:deploy` to deploy to GitHub Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+### NOTE  ###
+Remember: setting moduleId: module.id in the @Component decorator is the key here. If you don't have that then Angular 2 will be looking for your files at the root level.
+If you are using webpack for bundling then you don't need  module.id in decorator. Webpack plugins auto handle (add it)  module.id in final bundle
